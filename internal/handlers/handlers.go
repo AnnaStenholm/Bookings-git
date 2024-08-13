@@ -605,15 +605,16 @@ func (m *Repository) AdminPostShowReservation(w http.ResponseWriter, r *http.Req
 		helpers.ServerError(w, err)
 		return
 	}
+
 	month := r.Form.Get("month")
 	year := r.Form.Get("year")
 
 	m.App.Session.Put(r.Context(), "flash", "Changes saved")
 
 	if year == "" {
-		http.Redirect(w, r, fmt.Sprintf("/admin/reserations-%s", src), http.StatusSeeOther)
+		http.Redirect(w, r, fmt.Sprintf("/admin/reservations-%s", src), http.StatusSeeOther)
 	} else {
-		http.Redirect(w, r, fmt.Sprintf("/admin/reserations-calendar?y=%s&m=%s", year, month), http.StatusSeeOther)
+		http.Redirect(w, r, fmt.Sprintf("/admin/reservations-calendar?y=%s&m=%s", year, month), http.StatusSeeOther)
 	}
 
 }
@@ -721,9 +722,9 @@ func (m *Repository) AdminProcessReservation(w http.ResponseWriter, r *http.Requ
 	m.App.Session.Put(r.Context(), "flash", "reservation marked as processed")
 
 	if year == "" {
-		http.Redirect(w, r, fmt.Sprintf("/admin/reserations-%s", src), http.StatusSeeOther)
+		http.Redirect(w, r, fmt.Sprintf("/admin/reservations-%s", src), http.StatusSeeOther)
 	} else {
-		http.Redirect(w, r, fmt.Sprintf("/admin/reserations-calendar?y=%s&m=%s", year, month), http.StatusSeeOther)
+		http.Redirect(w, r, fmt.Sprintf("/admin/reservations-calendar?y=%s&m=%s", year, month), http.StatusSeeOther)
 	}
 
 }
@@ -740,9 +741,9 @@ func (m *Repository) AdminDeleteReservation(w http.ResponseWriter, r *http.Reque
 	m.App.Session.Put(r.Context(), "flash", "reservation deleted")
 
 	if year == "" {
-		http.Redirect(w, r, fmt.Sprintf("/admin/reserations-%s", src), http.StatusSeeOther)
+		http.Redirect(w, r, fmt.Sprintf("/admin/reservations-%s", src), http.StatusSeeOther)
 	} else {
-		http.Redirect(w, r, fmt.Sprintf("/admin/reserations-calendar?y=%s&m=%s", year, month), http.StatusSeeOther)
+		http.Redirect(w, r, fmt.Sprintf("/admin/reservations-calendar?y=%s&m=%s", year, month), http.StatusSeeOther)
 	}
 }
 
