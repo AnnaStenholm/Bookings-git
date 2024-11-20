@@ -60,28 +60,8 @@ a {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 20px;
   margin-bottom: 100px;
-}
-
-.interior3 {
-  width: 289px;
-}
-
-.interior4 {
-  width: 445px;
-  height: 260px;
-  margin-bottom: 10px;
-}
-
-.interior5 {
-  height: 40%;
-  width: 180px;
-  margin-right: 40px;
-  margin-left: 10px;
-}
-
-.interior6 {
-  height: 182px;
-  width: 400px;
+  display: flex;
+  justify-content: center;
 }
 
 .staff-heading {
